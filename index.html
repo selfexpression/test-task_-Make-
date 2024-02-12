@@ -6,6 +6,335 @@
   <title>Test Task</title>
 </head>
 <body>
-  
+  <header>
+    <aside class="menu">
+      <div class="menu__logo"></div>
+      <div class="menu__text">
+        <span>Кривощапов</span>
+        <span>Артём Александрович</span>
+      </div>
+      <div class="menu__ico"></div>
+    </aside>
+    <nav class="nav-menu">
+      <div class="nav-menu__item">Напутственное слово</div>
+      <div class="nav-menu__item">Сетка</div>
+      <div class="nav-menu__item">Типографика</div>
+      <div class="nav-menu__item">UI</div>
+    </nav>
+    <div class="header-text">
+      <h1>Тестовое задание</h1>
+      <p>Уровень: junior</p>
+      <p>Привет! Твоё тестовое задание — грамотно заверстать эту прекрасную страничку. 
+        В шапке страницы укажи своё ФИО, так всем будет удобнее. В менюхе под иконкой 
+        бургером мы хотели бы также видеть твои данные. Ну что, поехали?</p>
+    </div>
+  </header>
+  <main>
+    <section class="grid">
+      <h2>Сетка</h2>
+      <p>Задание предполагает адаптивную вёрстку. Используется 3 состояния в зависимости от устройства. Сетка «резиновая» — переменной ширины.</p>
+      <div class="grid-info">
+        <h3>Десктоп (1200+)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Контент</th>
+              <th>Колонок</th>
+              <th>Ширина колонки</th>
+              <th>Межколонник</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1072–1312</td>
+              <td>12</td>
+              <td>60-80</td>
+              <td>32</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid-info__image"></div>  
+      </div>
+      <div class="grid-info">
+        <h3>Планшет (736+)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Контент</th>
+              <th>Колонок</th>
+              <th>Ширина колонки</th>
+              <th>Межколонник</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>672–928</td>
+              <td>8</td>
+              <td>56-88</td>
+              <td>32</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid-info__image"></div>  
+      </div>
+      <div class="grid-info">
+        <h3>Телефон (320+)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Контент</th>
+              <th>Колонок</th>
+              <th>Ширина колонки</th>
+              <th>Межколонник</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>296–424</td>
+              <td>4</td>
+              <td>56-88</td>
+              <td>24</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid-info__image"></div>  
+      </div>
+    </section>
+    <section class="typography">
+      <h2>Типографика</h2>
+      <p>Используется шрифт Graphik. На телефонах стили типографики переопределяются</p>
+      <div class="typography__menu">
+        <button type="button">Десктоп</button>
+        <button type="button">Телефон</button>
+      </div>
+      <div class="typography__desktop">
+        <table>
+          <tr>
+            <th>Заголовок H1, 48/56, bold</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H2, 32/40, bold</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H3, 24/32, medium</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H4, 18/28, medium</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Лид P_Lead, 24/32, regular</th>
+            <td>Текст лида</td>
+          </tr>
+          <tr>
+            <th>Крупный текст P_18, 18/28, regular</th>
+            <td>Крупный текст</td>
+          </tr>
+          <tr>
+            <th>Основной текст P_16, 16/24, regular</th>
+            <td>Основной текст</td>
+          </tr>
+          <tr>
+            <th>Впомогательный текст P_14, 14/20, regular</th>
+            <td>Вспомогательный текст</td>
+          </tr>
+        </table>
+      </div>
+      <div class="typography__mobile">
+        <table>
+          <tr>
+            <th>Заголовок H1, 32/40, bold</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H2, 28/36, bold</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H3, 20/28, medium</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Заголовок H4, 18/28, medium</th>
+            <td>Текст заголовка</td>
+          </tr>
+          <tr>
+            <th>Лид P_Lead, 20/28, regular</th>
+            <td>Текст лида</td>
+          </tr>
+          <tr>
+            <th>Крупный текст P_18, 18/28, regular</th>
+            <td>Крупный текст</td>
+          </tr>
+          <tr>
+            <th>Основной текст P_16, 16/24, regular</th>
+            <td>Основной текст</td>
+          </tr>
+          <tr>
+            <th>Впомогательный текст P_14, 14/20, regular</th>
+            <td>Вспомогательный текст</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="ui">
+      <div class="text-field-wrapper">
+        <h2>UI</h2>
+        <h3>Текстовое поле</h3>
+        <div class="text-field">
+          <div class="text-field__item">
+            <label for="email-1"></label>
+            <input type="text" id="email-1" name="email-1" placeholder="E-mail">
+          </div>
+          <div class="text-field__item">
+            <div>Ховер</div>
+            <label for="email-2"></label>
+            <input type="text" id="email-2" name="email-2" placeholder="E-mail">
+          </div>
+          <div class="text-field__item">
+            <div>Ввод</div>
+            <label for="email-3"></label>
+            <input type="text" id="email-3" name="email-3" placeholder="E-mail">
+          </div>
+          <div class="text-field__item">
+            <div>Ошибка</div>
+            <label for="email-4"></label>
+            <input type="text" id="email-4" name="email-4" placeholder="E-mail">
+            <div class="error">Текст ошибки</div>
+          </div>
+        </div>
+      </div>
+      <div class="select-list-wrapper">
+        <h3>Выпадающий список</h3>
+        <p>Компонент состоит из текстового поля и выпадающей подсказки</p>
+        <div class="select-list">
+          <div class="select-list__item">
+            <label for="dropdown-1"></label>
+            <select id="dropdown-1" name="dropdown-1">
+              <option value="" disabled selected>Выберите что-нибудь</option>
+              <option value="option1">Первый стул</option>
+              <option value="option2">Второй стул</option>
+              <option value="option3">Выбранный пункт</option>
+              <option value="option4">Теорема Эскобара</option>
+            </select>
+          </div>
+          <div class="select-list__item">
+            <label for="dropdown-2"></label>
+            <select id="dropdown-2" name="dropdown-2">
+              <option value="" disabled selected>Выберите что-нибудь</option>
+              <option value="option1">Первый стул</option>
+              <option value="option2">Второй стул</option>
+              <option value="option3">Выбранный пункт</option>
+              <option value="option4">Теорема Эскобара</option>
+            </select>
+          </div>
+          <div class="select-list__item">
+            <label for="dropdown-3"></label>
+            <select id="dropdown-3" name="dropdown-3">
+              <option value="" disabled selected>Выберите что-нибудь</option>
+              <option value="option1">Первый стул</option>
+              <option value="option2">Второй стул</option>
+              <option value="option3">Выбранный пункт</option>
+              <option value="option4">Теорема Эскобара</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="buttons-wrapper">
+        <h3>Кнопка</h3>
+        <div class="buttons">
+          <div class="buttons__item">
+            <button type="button">Отправить</button>
+          </div>
+          <div class="buttons__item">
+            <div>Ховер</div>
+            <button type="button">Отправить</button>
+          </div>
+          <div class="buttons__item">
+            <div>Нажатие</div>
+            <button type="button">Отправить</button>
+          </div>
+          <div class="buttons__item">
+            <div>Неактивна</div>
+            <button type="button">Отправить</button>
+          </div>
+        </div>
+      </div>
+      <div class="radio-check-wrapper">
+        <h3>Чекбокс, радиобаттон</h3>
+        <label class="radio-check-wrapper__item">
+          <input type="checkbox" id="checkbox">
+          <span>Выбери меня</span>
+        </label>
+        <label class="radio-check-wrapper__item">
+          <input type="checkbox" id="checkbox">
+          <span>Выбери меня</span>
+        </label>
+        <label class="radio-check-wrapper__item">
+          <input type="checkbox" id="checkbox">
+          <span>Птица счастья завтрашнего дня</span>
+        </label>
+        <label class="radio-check-wrapper__item">
+          <input type="radio" id="checkbox">
+          <span>Пластмассовый мир победил</span>
+        </label>
+        <label class="radio-check-wrapper__item">
+          <input type="radio" id="checkbox">
+          <span>Макет оказался сильней</span>
+        </label>
+        <label class="radio-check-wrapper__item">
+          <input type="radio" id="checkbox">
+          <span>Последний кораблик остыл</span>
+        </label>
+      </div>
+      <div class="accordion-wrapper">
+        <div class="accordion-wrapper__item">
+          <h3>Аккордеон</h3>
+          <button type="menu">Аккордеон</button>
+          <div class="content">
+            Гоpдость полными вагонами золотыми погонами
+            С юга дyют молодые вет…
+            Pазpывая в клочья облака не забыли шлют из далека
+            С дома мама И не последняя любовь
+            А по небy бегyт видишь чьи-то следы
+            Это может быть ты это может быть я
+            Это может наш дрyг
+            Это может нам поют свои
+          </div>
+        </div>
+        <div class="accordion-wrapper__item">
+          <h3>Аккордеон</h3>
+          <button type="menu">Аккордеон</button>
+          <div class="content">
+            Гоpдость полными вагонами золотыми погонами
+            С юга дyют молодые вет…
+            Pазpывая в клочья облака не забыли шлют из далека
+            С дома мама И не последняя любовь
+            А по небy бегyт видишь чьи-то следы
+            Это может быть ты это может быть я
+            Это может наш дрyг
+            Это может нам поют свои
+          </div>
+        </div>
+        <div class="accordion-wrapper__item">
+          <h3>Аккордеон</h3>
+          <button type="menu">Аккордеон</button>
+          <div class="content">
+            Гоpдость полными вагонами золотыми погонами
+            С юга дyют молодые вет…
+            Pазpывая в клочья облака не забыли шлют из далека
+            С дома мама И не последняя любовь
+            А по небy бегyт видишь чьи-то следы
+            Это может быть ты это может быть я
+            Это может наш дрyг
+            Это может нам поют свои
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -12,13 +13,17 @@ module.exports = {
   devServer: {
     open: true,
     host: 'localhost',
-    watchFiles: ['index.html'],
+    watchFiles: ['src/**/*'],
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   plugins: [
     new ESLintPlugin({}),
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -35,6 +40,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]',
+        },
       },
     ],
   },
