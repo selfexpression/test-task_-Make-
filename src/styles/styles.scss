@@ -1,5 +1,6 @@
 @use "../blocks/menu/menu.scss";
 @use "../blocks/nav-menu/nav-menu.scss";
+@use "../blocks/grid/grid.scss";
 @use "./functions.scss" as function;
 @use "./variables.scss" as variable;
 
@@ -26,7 +27,6 @@ h1 {
   font-size: variable.$h1-font-size;
   line-height: variable.$h1-line-height;
   font-family: 'Graphik LCG-Bold';
-  margin: 0;
 }
 
 h2 {
@@ -47,9 +47,9 @@ h4 {
   font-family: 'Graphik LCG-Medium';
 }
 
-p {
-  font-family: 'Graphik LCG-Regular';
-}
+// p {
+//   font-family: 'Graphik LCG-Regular';
+// }
 
 .container {
   display: flex;
@@ -83,6 +83,8 @@ main {
 .lead-text {
   font-size: variable.$p-lead-font-size;
   line-height: variable.$p-lead-line-height;
+
+  font-family: 'Graphik LCG-Regular';
 }
 
 .main-text {
@@ -90,6 +92,7 @@ main {
   line-height: variable.$p_main-line-height;
 
   max-width: function.px-to-em(592px);
+  font-family: 'Graphik LCG-Regular';
 }
 
 .util-text {
@@ -97,6 +100,7 @@ main {
   line-height: variable.$p_util-line-height;
 
   color: #7D7D7D;
+  font-family: 'Graphik LCG-Regular';
 }
 
 @media screen and (min-width: 1200px) {
