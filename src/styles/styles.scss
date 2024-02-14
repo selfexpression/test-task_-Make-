@@ -1,6 +1,7 @@
 @use "../blocks/menu/menu.scss";
 @use "../blocks/nav-menu/nav-menu.scss";
 @use "../blocks/grid/grid.scss";
+@use "../blocks/typography/typography.scss";
 @use "./functions.scss" as function;
 @use "./variables.scss" as variable;
 
@@ -19,37 +20,17 @@
   src: url("../assets/fonts/Graphik-Regular-Web.woff2");
 }
 
+@mixin text-style($font-size, $line-height, $font-family) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+
+  @content;
+}
+
 body {
   box-sizing: border-box;
 }
-
-h1 {
-  font-size: variable.$h1-font-size;
-  line-height: variable.$h1-line-height;
-  font-family: 'Graphik LCG-Bold';
-}
-
-h2 {
-  font-size: variable.$h2-font-size;
-  line-height: variable.$h2-line-height;
-  font-family: 'Graphik LCG-Bold';
-}
-
-h3 {
-  font-size: variable.$h3-font-size;
-  line-height: variable.$h3-line-height;
-  font-family: 'Graphik LCG-Medium';
-}
-
-h4 {
-  font-size: variable.$h4-font-size;
-  line-height: variable.$h4-line-height;
-  font-family: 'Graphik LCG-Medium';
-}
-
-// p {
-//   font-family: 'Graphik LCG-Regular';
-// }
 
 .container {
   display: flex;
@@ -66,7 +47,7 @@ header {
   }
 
   .header-title, .text-content {
-    grid-column: 4 / -1;
+    grid-column: 4 / 12;
   }
 
   .nav-menu {
@@ -76,31 +57,83 @@ header {
 
 main {
   .grid, .typography, .ui {
-    grid-column: 4 / -1;
+    grid-column: 4 / 12;
   }
 }
 
-.lead-text {
-  font-size: variable.$p-lead-font-size;
-  line-height: variable.$p-lead-line-height;
+td, th {
+  text-align: start;
+}
 
-  font-family: 'Graphik LCG-Regular';
+
+h1, .h1-style {
+  @include text-style(
+    variable.$h1-font-size,
+    variable.$h1-line-height,
+    'Graphik LCG-Bold'
+  ) {
+    white-space: nowrap;
+  }
+}
+
+h2, .h2-style {
+  @include text-style(
+    variable.$h2-font-size,
+    variable.$h2-line-height,
+    'Graphik LCG-Bold'
+  );
+}
+
+h3, .h3-style {
+  @include text-style(
+    variable.$h3-font-size,
+    variable.$h3-line-height,
+    'Graphik LCG-Medium'
+  );
+}
+
+h4, .h4-style {
+  @include text-style(
+    variable.$h4-font-size,
+    variable.$h4-line-height,
+    'Graphik LCG-Medium'
+  );
+}
+
+.lead-text {
+  @include text-style(
+    variable.$p-lead-font-size,
+    variable.$p-lead-line-height,
+    'Graphik LCG-Regular'
+  );
+}
+
+.big-text {
+  @include text-style(
+    variable.$p_big-font-size,
+    variable.$p-big-line-height,
+    'Graphik LCG-Regular'
+  );
 }
 
 .main-text {
-  font-size: variable.$p_main-font-size;
-  line-height: variable.$p_main-line-height;
-
-  max-width: function.px-to-em(592px);
-  font-family: 'Graphik LCG-Regular';
+  @include text-style(
+    variable.$p_main-font-size,
+    variable.$p-main-line-height,
+    'Graphik LCG-Regular'
+  ) {
+    max-width: function.px-to-em(592px);
+  }
 }
 
 .util-text {
-  font-size: variable.$p_util-font-size;
-  line-height: variable.$p_util-line-height;
-
-  color: #7D7D7D;
-  font-family: 'Graphik LCG-Regular';
+  @include text-style(
+    variable.$p_util-font-size,
+    variable.$p-util-line-height,
+    'Graphik LCG-Regular'
+  ) {
+    color: #7D7D7D;
+  }
 }
 
 @media screen and (min-width: 1200px) {
