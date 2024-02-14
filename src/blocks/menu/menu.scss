@@ -1,0 +1,49 @@
+@use "../../styles/functions" as function;
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+
+  .menu__brand {
+    display: flex;
+    gap: 1.3em;
+    margin-left: 1em;
+
+    .menu__brand__logo {
+      height: function.px-to-em(40px);
+      width: function.px-to-em(40px);
+  
+      background-image: url("~images/logo.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  
+    .menu__brand__text {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .menu__ico {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em; 
+    margin-right: 1em;
+
+    .menu__ico__line-1 {
+      width: function.px-to-em(32px);
+    }
+
+    .menu__ico__line-2 {
+      width: function.px-to-em(24px);
+      margin-left: auto;
+    }
+
+    .menu__ico__line-1, .menu__ico__line-2 {
+      height: function.px-to-em(2px);
+      background-color: #1B1B1B;
+    }
+  }
+}

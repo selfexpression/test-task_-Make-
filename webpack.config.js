@@ -9,19 +9,18 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
-  devServer: {
-    open: true,
-    host: 'localhost',
-    watchFiles: ['src/**/*'],
-    static: {
-      directory: path.join(__dirname, 'dist'),
+  resolve: {
+    alias: {
+      images: path.resolve(__dirname, 'src/assets/images'),
+      fonts: path.resolve(__dirname, 'src/assets/fonts'),
     },
   },
   plugins: [
     new ESLintPlugin({}),
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
   ],
@@ -45,7 +44,14 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name][ext]',
+          filename: 'assets/images/[hash][name][ext]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[hash][ext][query]',
         },
       },
     ],

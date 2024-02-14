@@ -1,0 +1,121 @@
+@use "../blocks/menu/menu.scss";
+@use "../blocks/nav-menu/nav-menu.scss";
+@use "./functions.scss" as function;
+@use "./variables.scss" as variable;
+
+@font-face {
+  font-family: 'Graphik LCG-Bold';
+  src: url("../assets/fonts/Graphik-Bold-Web.woff2");
+}
+
+@font-face {
+  font-family: 'Graphik LCG-Medium';
+  src: url("../assets/fonts/Graphik-Medium-Web.woff2");
+}
+
+@font-face {
+  font-family: 'Graphik LCG-Regular';
+  src: url("../assets/fonts/Graphik-Regular-Web.woff2");
+}
+
+body {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: variable.$h1-font-size;
+  line-height: variable.$h1-line-height;
+  font-family: 'Graphik LCG-Bold';
+  margin: 0;
+}
+
+h2 {
+  font-size: variable.$h2-font-size;
+  line-height: variable.$h2-line-height;
+  font-family: 'Graphik LCG-Bold';
+}
+
+h3 {
+  font-size: variable.$h3-font-size;
+  line-height: variable.$h3-line-height;
+  font-family: 'Graphik LCG-Medium';
+}
+
+h4 {
+  font-size: variable.$h4-font-size;
+  line-height: variable.$h4-line-height;
+  font-family: 'Graphik LCG-Medium';
+}
+
+p {
+  font-family: 'Graphik LCG-Regular';
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header, main {
+  display: grid;
+}
+
+header {
+  .menu {
+    grid-column: 1 / -1;
+  }
+
+  .header-title, .text-content {
+    grid-column: 4 / -1;
+  }
+
+  .nav-menu {
+    grid-column: 1 / 3;
+  }
+}
+
+main {
+  .grid, .typography, .ui {
+    grid-column: 4 / -1;
+  }
+}
+
+.lead-text {
+  font-size: variable.$p-lead-font-size;
+  line-height: variable.$p-lead-line-height;
+}
+
+.main-text {
+  font-size: variable.$p_main-font-size;
+  line-height: variable.$p_main-line-height;
+
+  max-width: function.px-to-em(592px);
+}
+
+.util-text {
+  font-size: variable.$p_util-font-size;
+  line-height: variable.$p_util-line-height;
+
+  color: #7D7D7D;
+}
+
+@media screen and (min-width: 1200px) {
+  header, main {
+    grid-template-columns: repeat(12, 1fr);
+    gap: function.px-to-em(32px);
+  }
+}
+
+@media screen and (min-width: 736px) and (max-width: 1200px) {
+  header, main {
+    grid-template-columns: repeat(8, 1fr);
+    gap: function.px-to-em(32px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 736px) {
+  header, main {
+    grid-template-columns: repeat(4, 1fr);
+    gap: function.px-to-em(24px);
+  }
+}
