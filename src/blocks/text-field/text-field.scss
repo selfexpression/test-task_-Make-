@@ -11,6 +11,7 @@
 
   &__item {
     position: relative;
+    flex-basis: 33.3333%;
 
     &--has-content .text-field__label, 
     &--has-content .text-field__label-error {
@@ -53,7 +54,7 @@
     @include mixin.input-pseudo('Ховер', 2, before);
     @include mixin.input-pseudo('Ввод', 3, before);
     @include mixin.input-pseudo('Ошибка', 4, before);
-    @include mixin.input-pseudo('Текст ошибки', 4, after, 2.6em, #E80F3B);
+    @include mixin.input-pseudo('Текст ошибки', 4, after, 3.5em, #E80F3B);
 
     &:last-child {
       flex-basis: 100%;
@@ -75,9 +76,9 @@
     width: function.px-to-em(280px);
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    margin-right: 2em;
     border: none;
     outline: none;
+    cursor: pointer;
   }
 }
 

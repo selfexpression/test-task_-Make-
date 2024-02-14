@@ -19,7 +19,7 @@
     display: block;
     position: absolute;
     top: $top;
-    left: 0.3em;
+    left: 0;
 
     @include text-style(
     variable.$p_util-font-size,
