@@ -1,0 +1,83 @@
+@use "../../styles/functions" as function;
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.text-field {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5em;
+  margin-bottom: 5em;
+
+  &__item {
+    position: relative;
+
+    &--has-content .text-field__label, 
+    &--has-content .text-field__label-error {
+      top: -0.7em;
+      font-size: function.px-to-em(12px);
+    }
+
+    &--has-content .text-field__label {
+      color: #AEADAE;
+    }
+
+    &--has-content .text-field__label-error {
+      color: #E80F3B;
+    }
+
+    #email-1 {
+      border-bottom: 2px solid #AEADAE;
+
+      &:hover {
+        border-bottom: 2px solid #3E29E3;
+      }
+
+      &:focus {
+        border-bottom: 4px solid #3E29E3;;
+      }
+    }
+
+    #email-2 {
+      border-bottom: 2px solid #3E29E3;
+    }
+
+    #email-3 {
+      border-bottom: 4px solid #3E29E3;
+    }
+
+    #email-4 {
+      border-bottom: 4px solid #E80F3B;
+    }
+
+    @include mixin.input-pseudo('Ховер', 2, before);
+    @include mixin.input-pseudo('Ввод', 3, before);
+    @include mixin.input-pseudo('Ошибка', 4, before);
+    @include mixin.input-pseudo('Текст ошибки', 4, after, 2.6em, #E80F3B);
+
+    &:last-child {
+      flex-basis: 100%;
+      margin-top: 6em;
+    }
+  }
+
+  &__label, &__label-error {
+    position: absolute;
+    top: 50%;
+    left: 0.3em;
+    transition: 0.2s ease all;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #1B1B1B;
+  }
+
+  &__input {
+    width: function.px-to-em(280px);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-right: 2em;
+    border: none;
+    outline: none;
+  }
+}
+

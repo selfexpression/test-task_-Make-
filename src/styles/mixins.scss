@@ -1,0 +1,34 @@
+@use "./variables.scss" as variable;
+
+@mixin text-style($font-size, $line-height, $font-family) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+
+  @content;
+}
+
+@mixin input-pseudo(
+  $content,
+  $item-index,
+  $type,
+  $top: -4em,
+  $color: #7D7D7D,
+  ) {
+  &:nth-child(#{$item-index})::#{$type} {
+    display: block;
+    position: absolute;
+    top: $top;
+    left: 0.3em;
+
+    @include text-style(
+    variable.$p_util-font-size,
+    variable.$p-util-line-height,
+    'Graphik LCG-Regular'
+  ) {
+    color: $color;
+  }
+
+    content: $content;
+  }
+}

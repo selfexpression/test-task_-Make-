@@ -2,8 +2,10 @@
 @use "../blocks/nav-menu/nav-menu.scss";
 @use "../blocks/grid/grid.scss";
 @use "../blocks/typography/typography.scss";
+@use "../blocks/text-field/text-field.scss";
 @use "./functions.scss" as function;
 @use "./variables.scss" as variable;
+@use "./mixins.scss" as mixin;
 
 @font-face {
   font-family: 'Graphik LCG-Bold';
@@ -18,14 +20,6 @@
 @font-face {
   font-family: 'Graphik LCG-Regular';
   src: url("../assets/fonts/Graphik-Regular-Web.woff2");
-}
-
-@mixin text-style($font-size, $line-height, $font-family) {
-  font-size: $font-size;
-  line-height: $line-height;
-  font-family: $font-family;
-
-  @content;
 }
 
 body {
@@ -67,7 +61,7 @@ td, th {
 
 
 h1, .h1-style {
-  @include text-style(
+  @include mixin.text-style(
     variable.$h1-font-size,
     variable.$h1-line-height,
     'Graphik LCG-Bold'
@@ -77,7 +71,7 @@ h1, .h1-style {
 }
 
 h2, .h2-style {
-  @include text-style(
+  @include mixin.text-style(
     variable.$h2-font-size,
     variable.$h2-line-height,
     'Graphik LCG-Bold'
@@ -85,7 +79,7 @@ h2, .h2-style {
 }
 
 h3, .h3-style {
-  @include text-style(
+  @include mixin.text-style(
     variable.$h3-font-size,
     variable.$h3-line-height,
     'Graphik LCG-Medium'
@@ -93,7 +87,7 @@ h3, .h3-style {
 }
 
 h4, .h4-style {
-  @include text-style(
+  @include mixin.text-style(
     variable.$h4-font-size,
     variable.$h4-line-height,
     'Graphik LCG-Medium'
@@ -101,7 +95,7 @@ h4, .h4-style {
 }
 
 .lead-text {
-  @include text-style(
+  @include mixin.text-style(
     variable.$p-lead-font-size,
     variable.$p-lead-line-height,
     'Graphik LCG-Regular'
@@ -109,7 +103,7 @@ h4, .h4-style {
 }
 
 .big-text {
-  @include text-style(
+  @include mixin.text-style(
     variable.$p_big-font-size,
     variable.$p-big-line-height,
     'Graphik LCG-Regular'
@@ -117,7 +111,7 @@ h4, .h4-style {
 }
 
 .main-text {
-  @include text-style(
+  @include mixin.text-style(
     variable.$p_main-font-size,
     variable.$p-main-line-height,
     'Graphik LCG-Regular'
@@ -127,7 +121,7 @@ h4, .h4-style {
 }
 
 .util-text {
-  @include text-style(
+  @include mixin.text-style(
     variable.$p_util-font-size,
     variable.$p-util-line-height,
     'Graphik LCG-Regular'
