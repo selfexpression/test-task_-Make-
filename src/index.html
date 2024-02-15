@@ -252,37 +252,39 @@
         </div>
         <div class="select-list-wrapper">
           <h3>Выпадающий список</h3>
-          <p>Компонент состоит из текстового поля и выпадающей подсказки</p>
+          <p class="main-text">Компонент состоит из текстового поля и выпадающей подсказки</p>
           <div class="select-list">
-            <div class="select-list__item">
-              <label for="dropdown-1"></label>
-              <select id="dropdown-1" name="dropdown-1">
-                <option value="" disabled selected>Выберите что-нибудь</option>
-                <option value="option1">Первый стул</option>
-                <option value="option2">Второй стул</option>
-                <option value="option3">Выбранный пункт</option>
-                <option value="option4">Теорема Эскобара</option>
-              </select>
+            <div class="select-list__item main-text">
+              <div class="select-list__label" data-label="label-1">
+                <span class="select-list__info">Выберите что-нибудь</span>
+              </div>
+              <div class="select-list__options" data-item="item-1">
+                <div class="select-list__option" data-value="option-1">Первый стул</div>
+                <div class="select-list__option" data-value="option-2">Второй стул</div>
+                <div class="select-list__option" data-value="option-3">Выбранный пункт</div>
+                <div class="select-list__option" data-value="option-4">Теорема Эскобара</div>
+              </div>
             </div>
-            <div class="select-list__item">
-              <label for="dropdown-2"></label>
-              <select id="dropdown-2" name="dropdown-2">
-                <option value="" disabled selected>Выберите что-нибудь</option>
-                <option value="option1">Первый стул</option>
-                <option value="option2">Второй стул</option>
-                <option value="option3">Выбранный пункт</option>
-                <option value="option4">Теорема Эскобара</option>
-              </select>
+            <div class="select-list__item main-text">
+              <div class="select-list__label" data-label="label-2">Выберите что-нибудь</div>
+              <div class="select-list__options" data-item="item-2">
+                <div class="select-list__option" data-value="option-1">Первый стул</div>
+                <div class="select-list__option" data-value="option-2">Второй стул</div>
+                <div class="select-list__option" data-value="option-3">Выбранный пункт</div>
+                <div class="select-list__option" data-value="option-4">Теорема Эскобара</div>
+              </div>
             </div>
-            <div class="select-list__item">
-              <label for="dropdown-3"></label>
-              <select id="dropdown-3" name="dropdown-3">
-                <option value="" disabled selected>Выберите что-нибудь</option>
-                <option value="option1">Первый стул</option>
-                <option value="option2">Второй стул</option>
-                <option value="option3">Выбранный пункт</option>
-                <option value="option4">Теорема Эскобара</option>
-              </select>
+            <div class="select-list__item main-text">
+              <div class="select-list__label select-list__label--active" data-label="label-1">
+                <span class="select-list__info">Выберите что-нибудь</span>
+                <span class="select-list__selected">Выбранный пункт</span>
+              </div>
+              <div class="select-list__options" data-item="item-3">
+                <div class="select-list__option" data-value="option-1">Первый стул</div>
+                <div class="select-list__option" data-value="option-2">Второй стул</div>
+                <div class="select-list__option" data-value="option-3">Выбранный пункт</div>
+                <div class="select-list__option" data-value="option-4">Теорема Эскобара</div>
+              </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 @use "../blocks/grid/grid.scss";
 @use "../blocks/typography/typography.scss";
 @use "../blocks/text-field/text-field.scss";
+@use "../blocks/select-list/select-list.scss";
 @use "./functions.scss" as function;
 @use "./variables.scss" as variable;
 @use "./mixins.scss" as mixin;
@@ -24,6 +25,7 @@
 
 body {
   box-sizing: border-box;
+  background-color: #FFFFFF;
 }
 
 .container {
