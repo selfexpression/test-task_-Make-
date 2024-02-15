@@ -14,16 +14,20 @@
     flex-basis: 33.3333%;
 
     &--has-content .text-field__label, 
-    &--has-content .text-field__label-error {
+    &--has-content .text-field__label-error,
+    &:focus-within .text-field__label, 
+    &:focus-within .text-field__label-error {
       top: -0.7em;
       font-size: function.px-to-em(12px);
     }
 
-    &--has-content .text-field__label {
+    &--has-content .text-field__label,
+    &:focus-within .text-field__label {
       color: #AEADAE;
     }
 
-    &--has-content .text-field__label-error {
+    &--has-content .text-field__label-error,
+    &:focus-within .text-field__label-error {
       color: #E80F3B;
     }
 
