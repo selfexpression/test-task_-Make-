@@ -1,0 +1,54 @@
+@use "../../styles/functions" as function;
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5em;
+
+  .buttons__item {
+    position: relative;
+    width: 100%;
+    max-width: function.px-to-em(148px);
+    height: function.px-to-em(56px);
+    flex-basis: 33.3333%;
+
+    margin-top: 5em;
+    margin-right: 10em;
+
+    border: none;
+    color: #FFFFFF;
+    border-radius: 2em;
+    cursor: pointer;
+
+    @include mixin.info-pseudo('Ховер', 2, before);
+    @include mixin.info-pseudo('Нажатие', 3, before);
+    @include mixin.info-pseudo('Неактивна', 4, before, -3.5em);
+  }
+
+  button[data-item="item-1"] {
+    background: linear-gradient(45deg, #DD80ED 0%, #3D28E3 100%);
+
+    &:hover {
+      background: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+    }
+
+    &:active {
+      background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+    }
+  }
+
+  button[data-item="item-2"] {
+    background: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+  }
+
+  button[data-item="item-3"] {
+    background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+  }
+
+  button[data-item="item-4"] {
+    flex-basis: 100%;
+    background: #CBCBCC;
+  }
+}

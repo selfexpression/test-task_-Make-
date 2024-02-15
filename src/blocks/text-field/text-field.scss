@@ -55,10 +55,10 @@
       border-bottom: 4px solid #E80F3B;
     }
 
-    @include mixin.input-pseudo('Ховер', 2, before);
-    @include mixin.input-pseudo('Ввод', 3, before);
-    @include mixin.input-pseudo('Ошибка', 4, before);
-    @include mixin.input-pseudo('Текст ошибки', 4, after, 3.5em, #E80F3B);
+    @include mixin.info-pseudo('Ховер', 2, before);
+    @include mixin.info-pseudo('Ввод', 3, before);
+    @include mixin.info-pseudo('Ошибка', 4, before);
+    @include mixin.info-pseudo('Текст ошибки', 4, after, 3.5em, #E80F3B);
 
     &:last-child {
       flex-basis: 100%;
