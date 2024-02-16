@@ -10,7 +10,7 @@
     gap: 1.3em;
     margin-left: 1em;
 
-    .menu__brand__logo {
+    .menu__logo {
       height: function.px-to-em(40px);
       width: function.px-to-em(40px);
   
@@ -20,9 +20,16 @@
       background-repeat: no-repeat;
     }
   
-    .menu__brand__text {
+    .menu__text {
       display: flex;
       flex-direction: column;
+
+      .menu__surname {
+        $p_util-font-size: 14px;
+        $p_util-line-height: 20px;
+
+        font-family: 'Graphik LCG-Regular';
+      }
     }
   }
 
@@ -32,16 +39,16 @@
     gap: 0.3em; 
     margin-right: 1em;
 
-    .menu__ico__line-1 {
+    .menu__line-1 {
       width: function.px-to-em(32px);
     }
 
-    .menu__ico__line-2 {
+    .menu__line-2 {
       width: function.px-to-em(24px);
       margin-left: auto;
     }
 
-    .menu__ico__line-1, .menu__ico__line-2 {
+    .menu__line-1, .menu__line-2 {
       height: function.px-to-em(2px);
       background-color: #1B1B1B;
     }
