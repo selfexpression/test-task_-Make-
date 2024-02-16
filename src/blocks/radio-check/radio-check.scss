@@ -55,6 +55,7 @@
     input[type="checkbox"]:checked + .checkbox-label[data-check="item-1"] {
       &::before {
         background-color: #3E29E3;
+        border-color: #3E29E3;
       }
 
       &::after {

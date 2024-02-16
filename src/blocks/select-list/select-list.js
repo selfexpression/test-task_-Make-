@@ -4,14 +4,17 @@ export const toggleSelectList = (state) => {
   const optionsWindow = document.querySelector('.select-list__options');
   const optionElements = document.querySelectorAll('.select-list__option');
 
+  const updateSelectListInfoDisplay = () => {
+    const selectedElementExists = !!selectListLabel.querySelector('.select-list__selected');
+    selectListInfo.style.display = state.selectList.isOpen || !selectedElementExists ? 'block' : 'none';
+  };
+
   const toggleList = () => {
-    const selectValue = state.selectList.isOpen ? 'remove' : 'add';
-    selectListLabel.classList[selectValue]('select-list__label--active');
-    optionsWindow.classList[selectValue]('select-list__options--active');
-
-    selectListInfo.classList.remove('select-list__info--selected');
-
     state.selectList.isOpen = !state.selectList.isOpen;
+    selectListLabel.classList.toggle('select-list__label--active', state.selectList.isOpen);
+    optionsWindow.classList.toggle('select-list__options--active', state.selectList.isOpen);
+
+    updateSelectListInfoDisplay();
   };
 
   const toggleElement = (element) => {
@@ -24,18 +27,14 @@ export const toggleSelectList = (state) => {
     newSelectedElement.textContent = elementText;
     selectListLabel.appendChild(newSelectedElement);
 
-    selectListInfo.classList.add('select-list__info--selected');
-
-    optionElements.forEach((el) => {
-      el.classList.remove('select-list__option--active');
-    });
-
+    optionElements.forEach((el) => el.classList.remove('select-list__option--active'));
     element.classList.add('select-list__option--active');
 
     selectListLabel.classList.remove('select-list__label--active');
     optionsWindow.classList.remove('select-list__options--active');
-
     state.selectList.isOpen = false;
+
+    updateSelectListInfoDisplay();
   };
 
   selectListLabel.addEventListener('click', toggleList);
