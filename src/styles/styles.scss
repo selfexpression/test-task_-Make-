@@ -6,6 +6,7 @@
 @use "../blocks/select-list/select-list.scss";
 @use "../blocks/buttons/buttons.scss";
 @use "../blocks/radio-check/radio-check.scss";
+@use "../blocks/accordion/accordion.scss";
 @use "./functions.scss" as function;
 @use "./variables.scss" as variable;
 @use "./mixins.scss" as mixin;
@@ -125,9 +126,7 @@ h4, .h4-style {
     variable.$p_main-font-size,
     variable.$p-main-line-height,
     'Graphik LCG-Regular'
-  ) {
-    max-width: function.px-to-em(592px);
-  }
+  );
 }
 
 .util-text {

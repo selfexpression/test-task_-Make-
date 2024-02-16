@@ -1,0 +1,113 @@
+.accordion {
+  margin-bottom: 5em;
+
+  .accordion__item {
+    width: 100%;
+
+    .accordion__button {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+      text-align: start;
+      padding: 2em 1em 1em 0em;
+  
+      border: none;
+      background: none;
+      color: #7D7D7D;
+      border-bottom: 1px solid #CBCBCC;
+
+      &::after,
+      &::before {
+        position: absolute;
+        width: 0.2em;
+        height: 0.5em;
+        top: 2.5em;
+
+        background-color: #3E29E3;
+        transition: all 0.3s ease-in-out;
+
+        content: " ";
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        right: 0;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        right: 0.25em;
+      }
+    }
+
+    .accordion__content {
+      padding: 1em 1em 2em 0em;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  
+  
+  .accordion__item[data-item="item-1"] {
+    .accordion__button {
+      &:hover {
+        color: #1B1B1B;
+        border-bottom: 1px solid #3E29E3;
+      }
+  
+      &--active {
+        color: #3E29E3;
+        border-bottom: 2px solid #3E29E3;
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+  
+        &::before {
+          transform: rotate(45deg);
+        }
+      }
+
+      &--active + .accordion__content {
+        padding: 1em 1em 2em 0em;
+        max-height: 20em;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  
+  .accordion__item[data-item="item-2"] {
+    border-bottom: 1px solid #3E29E3;
+
+    .accordion__button {
+      color: #1B1B1B;
+    }
+  }
+
+  .accordion__item[data-item="item-3"] {
+    border-bottom: 2px solid #3E29E3;
+
+    .accordion__button {
+      color: #3E29E3;
+      border: none;
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  
+  .accordion__item[data-item="item-1"],
+  .accordion__item[data-item="item-2"] {
+    .accordion__content {
+      padding: 0;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
