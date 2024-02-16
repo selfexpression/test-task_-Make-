@@ -13,70 +13,57 @@
     padding-top: 0.3em;
   }
 
-  .grid__info__image {
+  .grid__image {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: function.px-to-em(904px);
-    height: function.px-to-em(582px);
+    height: function.px-to-em(480px);
+    margin-top: 3em;
+    margin-bottom: 4em;
 
-    .image__desktop {
-      width: 100%;
-      height: function.px-to-em(480px);
+    background-color: #F6F6F6;
+    overflow: hidden;
 
-      background-image: url("~images/desktop.png");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    .grid__desktop,
+    .grid__tablet,
+    .grid__mobile {
+      max-width: 100%;
 
-    .image__tablet {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: function.px-to-em(480px);
-      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
 
-      background-color: #F6F6F6;
-
-      .image {
-        width: function.px-to-em(592px);
-        height: function.px-to-em(360px);
-
-        background-image: url("~images/tablet.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+        object-fit: cover;
+        object-position: center;
       }
     }
 
-    .image__mobile {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: function.px-to-em(480px);
-      width: 100%;
-      overflow: hidden;
+    .grid__tablet {
+      width: 65%;
+    }
 
-      background-color: #F6F6F6;
+    .grid__mobile {
+      position: relative;
 
       .line {
         position: absolute;
-        width: function.px-to-em(306px);
+        width: function.px-to-em(312px);
         height: function.px-to-em(2px);
         background-color: #3E29E3;
+        top: 24em;
+        left: 0.5em;
       }
-  
-      .image {
-        width: function.px-to-em(320px);
-        height: function.px-to-em(535px);
-        margin-top: 15em;
 
-        background-image: url("~images/mobile.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+      img {
+        margin-top: 15em;
       }
+    }
+  }
+
+  &:last-child {
+    .grid__image {
+      margin-bottom: 0;
     }
   }
 }
