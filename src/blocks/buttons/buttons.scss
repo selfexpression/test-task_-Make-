@@ -53,13 +53,21 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1200px) {
+@media screen and (min-width: 736px) and (max-width: 1200px) {
+  .buttons {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 736px) {
   .buttons {
     justify-content: center;
     
     .buttons__item {
       margin-top: 5em;
-      margin-right: 2em;
+      margin-right: 1em;
+
+      flex-basis: auto;
     }
   }
 }

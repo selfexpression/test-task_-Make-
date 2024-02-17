@@ -76,9 +76,7 @@ h1, .h1-style {
     variable.$h1-font-size,
     variable.$h1-line-height,
     'Graphik LCG-Bold'
-  ) {
-    white-space: nowrap;
-  }
+  );
 }
 
 h2, .h2-style {
@@ -147,40 +145,70 @@ h4, .h4-style {
 
   header {
     .header-title, .text-content {
-      grid-column: 2 / 8;
+      grid-column: 3 / -1;
     }
   
     .nav-menu {
-      grid-column: 2 / -1;
+      grid-column: 1 / 3;
     }
   }
 
   main {
+    padding: 0.5em;
+
     .grid, .typography, .ui {
-      grid-column: 2 / 8;
+      grid-column: 3 / -1;
     }
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 736px) {
   header, main {
-    grid-template-columns: repeat(12, calc(100vw / 12));
+    grid-template-columns: repeat(4, 1fr);
     gap: function.px-to-em(24px);
   }
 
   header {
     .header-title, .text-content {
-      grid-column: 2 / 12;
+      grid-column: 1 / -1;
     }
   
     .nav-menu {
       grid-column: 1 / -1;
     }
+
+    .header-title,
+    .nav-menu,
+    .text-content {
+      padding: 1em;
+    }
   }
 
   main {
+    padding: 1em;
+
     .grid, .typography, .ui {
-      grid-column: 2 / 12;
+      grid-column: 1 / -1;
     }
+  }
+
+  h1, .h1-style {
+    font-size: variable.$h1-mobile-font-size;
+    line-height: variable.$h1-mobile-line-height;
+  }
+
+  h2, .h2-style {
+    font-size: variable.$h2-mobile-font-size;
+    line-height: variable.$h2-mobile-line-height;
+  }
+
+  h3, .h3-style {
+    font-size: variable.$h3-mobile-font-size;
+    line-height: variable.$h3-mobile-line-height;
+  }
+
+  .lead-text {
+    font-size: variable.$p-mobile-lead-font-size;
+    line-height: variable.$p-mobile-lead-line-height;
   }
 }

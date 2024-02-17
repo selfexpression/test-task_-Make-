@@ -86,15 +86,30 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1200px) {
+@media screen and (min-width: 736px) and (max-width: 1200px) {
+  .text-field {
+    justify-content: flex-start;
+    margin-top: 0;
+    
+    .text-field__item {
+      margin-top: 5em;
+      margin-right: 2em;
+      flex-basis: 25% !important;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 736px) {
   .text-field {
     justify-content: center;
     
     .text-field__item {
       margin-top: 5em;
-      margin-right: 2em;
-
       flex-basis: 25% !important;
+
+      &:nth-child(1) {
+        margin-top: 0;
+      }
     }
   }
 }

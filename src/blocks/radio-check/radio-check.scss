@@ -14,6 +14,7 @@
   .radio-check__radios {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 
     margin-right: 6em;
     margin-left: 1em;
@@ -148,6 +149,11 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1200px) {
-  
+@media screen and (min-width: 320px) and (max-width: 736px) {
+  .radio-check {
+    .radio-check__checkboxes,
+    .radio-check__radios {
+      margin-right: 0;
+    }
+  }
 }

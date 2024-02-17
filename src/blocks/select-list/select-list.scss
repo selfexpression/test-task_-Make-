@@ -4,11 +4,13 @@
 
 .select-list {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   margin-top: 3em;
 
   .select-list__item {
     flex-basis: 33.3333%;
+    margin-top: 3em;
+    margin-right: 1em;
     cursor: pointer;
 
     .select-list__label {
@@ -138,11 +140,20 @@ div[data-label="label-3"] {
 
 @media screen and (min-width: 320px) and (max-width: 1200px) {
   .select-list {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 736px) {
+  .select-list {
     justify-content: center;
-    
+
     .select-list__item {
-      margin-top: 3em;
-      margin-right: 2em;
+      margin-right: 0;
+      
+      &:nth-child(1) {
+        margin-top: 0;
+      }
     }
   }
 }
