@@ -1,6 +1,8 @@
+@use "../../styles/variables" as variable;
+
 .typography {
   .typography__menu {
-    border-bottom: 1px solid #CBCBCC;
+    border-bottom: 1px solid variable.$grey-color;
 
     .desktop-button, .mobile-button {
       padding-bottom: 1em;
@@ -11,7 +13,7 @@
       cursor: pointer;
 
       &--active {
-        border-bottom: 2px solid #3E29E3;
+        border-bottom: 2px solid variable.$blue-color;
       }
     }
   }
@@ -28,7 +30,7 @@
       }
   
       td.util-text {
-        color: #1B1B1B;
+        color: variable.$dark-color;
       }
     }
   }

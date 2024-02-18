@@ -26,9 +26,35 @@
   src: url("../assets/fonts/Graphik-Regular-Web.woff2");
 }
 
+@each $tag, $size, $line-height, $font-family in (
+  ('h1', variable.$h1-font-size, variable.$h1-line-height, 'Graphik LCG-Bold'),
+  ('h2', variable.$h2-font-size, variable.$h2-line-height, 'Graphik LCG-Bold'),
+  ('h3', variable.$h3-font-size, variable.$h3-line-height, 'Graphik LCG-Medium'),
+  ('h4', variable.$h4-font-size, variable.$h4-line-height, 'Graphik LCG-Medium')
+) {
+  #{$tag}, .#{$tag}-style {
+    @include mixin.text-style($size, $line-height, $font-family);
+  }
+}
+
+@each $name, $size, $line-height, $font-family in (
+  ('lead-text', variable.$p-lead-font-size, variable.$p-lead-line-height, 'Graphik LCG-Regular'),
+  ('big-text', variable.$p-big-font-size, variable.$p-big-line-height, 'Graphik LCG-Regular'),
+  ('main-text', variable.$p-main-font-size, variable.$p-main-line-height, 'Graphik LCG-Regular'),
+  ('util-text', variable.$p-util-font-size, variable.$p-util-line-height, 'Graphik LCG-Regular')
+) {
+  .#{$name} {
+    @include mixin.text-style($size, $line-height, $font-family);
+    @if $name == util-text {
+      color: variable.$dark-grey-color;;
+    }
+  }
+}
+
+
 body {
   box-sizing: border-box;
-  background-color: #FFFFFF;
+  background-color: variable.$biege-color;
 
   margin: 0;
   padding: 0;
@@ -70,72 +96,6 @@ td, th {
   text-align: start;
 }
 
-
-h1, .h1-style {
-  @include mixin.text-style(
-    variable.$h1-font-size,
-    variable.$h1-line-height,
-    'Graphik LCG-Bold'
-  );
-}
-
-h2, .h2-style {
-  @include mixin.text-style(
-    variable.$h2-font-size,
-    variable.$h2-line-height,
-    'Graphik LCG-Bold'
-  );
-}
-
-h3, .h3-style {
-  @include mixin.text-style(
-    variable.$h3-font-size,
-    variable.$h3-line-height,
-    'Graphik LCG-Medium'
-  );
-}
-
-h4, .h4-style {
-  @include mixin.text-style(
-    variable.$h4-font-size,
-    variable.$h4-line-height,
-    'Graphik LCG-Medium'
-  );
-}
-
-.lead-text {
-  @include mixin.text-style(
-    variable.$p-lead-font-size,
-    variable.$p-lead-line-height,
-    'Graphik LCG-Regular'
-  );
-}
-
-.big-text {
-  @include mixin.text-style(
-    variable.$p_big-font-size,
-    variable.$p-big-line-height,
-    'Graphik LCG-Regular'
-  );
-}
-
-.main-text {
-  @include mixin.text-style(
-    variable.$p_main-font-size,
-    variable.$p-main-line-height,
-    'Graphik LCG-Regular'
-  );
-}
-
-.util-text {
-  @include mixin.text-style(
-    variable.$p_util-font-size,
-    variable.$p-util-line-height,
-    'Graphik LCG-Regular'
-  ) {
-    color: #7D7D7D;
-  }
-}
 
 @media screen and (min-width: 736px) and (max-width: 1200px) {
   header, main {
@@ -192,19 +152,15 @@ h4, .h4-style {
     }
   }
 
-  h1, .h1-style {
-    font-size: variable.$h1-mobile-font-size;
-    line-height: variable.$h1-mobile-line-height;
-  }
-
-  h2, .h2-style {
-    font-size: variable.$h2-mobile-font-size;
-    line-height: variable.$h2-mobile-line-height;
-  }
-
-  h3, .h3-style {
-    font-size: variable.$h3-mobile-font-size;
-    line-height: variable.$h3-mobile-line-height;
+  @each $tag, $size, $line-height in (
+    ('h1', variable.$h1-mobile-font-size, variable.$h1-mobile-line-height),
+    ('h2', variable.$h2-mobile-font-size, variable.$h2-mobile-line-height),
+    ('h3', variable.$h3-mobile-font-size, variable.$h3-mobile-line-height)
+  ) {
+    #{$tag} .#{tag}-style {
+      font-size: $size;
+      line-height: $line-height;
+    }
   }
 
   .lead-text {

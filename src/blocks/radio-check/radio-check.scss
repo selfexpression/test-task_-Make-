@@ -56,53 +56,30 @@
 
     input[type="checkbox"]:checked + .checkbox-label[data-check="item-1"] {
       &::before {
-        background-color: #3E29E3;
-        border-color: #3E29E3;
+        background-color: variable.$blue-color;
+        border-color: variable.$blue-color;
       }
 
       &::after {
-        position: absolute;
-        top: -0.2em;
-        left: -1.9em;
-        width: 0.4em;
-        height: 0.7em;
-        border: solid #FFFFFF;
-        border-width: 0 0.15em 0.15em 0;
-        transform: rotate(45deg);
-        content: "";
+        @include mixin.checkbox-after-element;
       }
     }
 
     input[type="radio"]:checked + .radio-label[data-radio="item-1"] {
       &::before {
-        border-color: #3E29E3;
+        border-color: variable.$blue-color;
       }
       
       &::after {
-        position: absolute;
-        width: function.px-to-em(15px);
-        height:  function.px-to-em(15px);
-        background-color: #3E29E3;
-        top: -0.1em;
-        left: -2.1em;
-        border-radius: 1em;
-
-        content: "";
+        @include mixin.radio-after-element;
       }
     }
 
-    .radio-label[data-radio="item-1"] {
-      &:hover {
-        &::before {
-          border-color: #3E29E3;
-        }
-      }
-    }
-
+    .radio-label[data-radio="item-1"],
     .checkbox-label[data-check="item-1"] {
       &:hover {
         &::before {
-          border-color: #3E29E3;
+          border-color: variable.$blue-color;
         }
       }
     }
@@ -112,39 +89,23 @@
     .radio-label[data-radio="item-2"],
     .radio-label[data-radio="item-3"] {
       &::before {
-        border-color: #3E29E3;
+        border-color: variable.$blue-color;
       }
     }
 
     .checkbox-label[data-check="item-3"] {
       &::before {
-        background-color: #3E29E3;
+        background-color: variable.$blue-color;
       }
 
       &::after {
-        position: absolute;
-        top: -0.2em;
-        left: -1.9em;
-        width: 0.4em;
-        height: 0.7em;
-        border: solid #FFFFFF;
-        border-width: 0 0.15em 0.15em 0;
-        transform: rotate(45deg);
-        content: "";
+        @include mixin.checkbox-after-element;
       }
     }
 
     .radio-label[data-radio="item-3"] {
       &::after {
-        position: absolute;
-        width: function.px-to-em(15px);
-        height:  function.px-to-em(15px);
-        background-color: #3E29E3;
-        top: -0.1em;
-        left: -2.1em;
-        border-radius: 1em;
-
-        content: "";
+        @include mixin.radio-after-element;
       }
     }
   }

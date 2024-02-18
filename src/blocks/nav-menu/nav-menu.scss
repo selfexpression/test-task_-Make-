@@ -1,3 +1,5 @@
+@use "../../styles/variables" as variable;
+
 .nav-menu {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   
   margin-left: 1em;
   padding-left: 2em;
-  color: #3E29E3;
+  color: variable.$blue-color;
 
   .nav-menu__item {
     cursor: pointer;
@@ -13,17 +15,17 @@
     &:nth-child(1),
     &:nth-child(2) {
       &:hover {
-        color: #1B1B1B;
+        color: variable.$dark-color;
       }
     }
 
     &:nth-child(3),
     &:nth-child(4) {
-      color: #7D7D7D;
+      color: variable.$dark-grey-color;
     }
 
     &:active {
-      color: #7D7D7D;
+      color: variable.$dark-grey-color;
     }
   }
 }

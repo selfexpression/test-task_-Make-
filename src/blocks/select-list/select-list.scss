@@ -1,6 +1,5 @@
 @use "../../styles/functions" as function;
 @use "../../styles/variables" as variable;
-@use "../../styles/mixins" as mixin;
 
 .select-list-wrapper {
   .select-list {
@@ -34,7 +33,7 @@
           height: 0.5em;
           top: 1em;
   
-          background-color: #3E29E3;
+          background-color: variable.$blue-color;
           transition: all 0.3s ease-in-out;
   
           content: " ";
@@ -88,12 +87,12 @@
   
         .select-list__option {
           &--active {
-            color: #3D28E1;
+            color: variable.$blue-color;
           }
   
           &:hover {
-            background-color: #3E29E3;
-            color: #FFFFFF;
+            background-color: variable.$blue-color;
+            color: variable.$biege-color;
           }
         }
       }
@@ -110,8 +109,8 @@
           }
   
           &:nth-child(4) {
-            background-color: #3E29E3;
-            color: #FFFFFF;
+            background-color: variable.$blue-color;
+            color: variable.$biege-color;
           }
         }
       }
@@ -124,11 +123,11 @@ div[data-label="label-1"] {
 }
 
 div[data-label="label-2"] {
-  border-bottom: 2px solid #3E29E3;
+  border-bottom: 2px solid variable.$blue-color;
 }
 
 div[data-label="label-3"] {
-  border-bottom: 2px solid #3E29E3;
+  border-bottom: 2px solid variable.$blue-color;
 
   &::after {
     transform: rotate(-45deg);

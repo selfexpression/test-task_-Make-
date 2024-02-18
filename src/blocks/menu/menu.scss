@@ -1,4 +1,6 @@
 @use "../../styles/functions" as function;
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
 
 .menu {
   display: flex;
@@ -17,11 +19,7 @@
     .menu__logo {
       height: function.px-to-em(40px);
       width: function.px-to-em(40px);
-  
-      background-image: url("~images/logo.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
+      @include mixin.background-image('~images/logo.png', contain);
     }
   
     .menu__text {
@@ -29,9 +27,8 @@
       flex-direction: column;
 
       .menu__surname {
-        $p_util-font-size: 14px;
-        $p_util-line-height: 20px;
-
+        font-size: variable.$p-util-font-size;
+        line-height: variable.$p-util-line-height;
         font-family: 'Graphik LCG-Regular';
       }
     }
@@ -63,10 +60,7 @@
  .menu__opened {
   display: none;
   position: relative;
-  background-image: url("~images/background-menu.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include mixin.background-image('~images/background-menu.png');
 
   .menu__close-button {
     position: absolute;
@@ -109,11 +103,7 @@
       grid-column: 1 / 1;
       justify-self: center;
       margin-top: 2em;
-  
-      background-image: url("~images/logo.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
+      @include mixin.background-image('~images/logo.png', contain);
     }
 
     p.util-text {
@@ -140,7 +130,7 @@
       grid-row: 4 / 5;
 
       text-decoration: none;
-      color: #3E29E3;
+      color: variable.$blue-color;
     }
 
     .menu__footer {
@@ -163,10 +153,10 @@
           width: function.px-to-em(12px);
           height: function.px-to-em(12px);
           background: 
-            linear-gradient(to right, #3E29E3, #3E29E3) top left / 6px 2px no-repeat,
-            linear-gradient(to top, #3E29E3, #3E29E3) bottom right / 2px 6px no-repeat,
-            linear-gradient(to left, #3E29E3, #3E29E3) bottom right / 12px 2px no-repeat,
-            linear-gradient(to bottom, #3E29E3, #3E29E3) bottom left / 2px 12px no-repeat;
+            linear-gradient(to right, variable.$blue-color, variable.$blue-color) top left / 6px 2px no-repeat,
+            linear-gradient(to top, variable.$blue-color, variable.$blue-color) bottom right / 2px 6px no-repeat,
+            linear-gradient(to left, variable.$blue-color, variable.$blue-color) bottom right / 12px 2px no-repeat,
+            linear-gradient(to bottom, variable.$blue-color, variable.$blue-color) bottom left / 2px 12px no-repeat;
           left: 50%;
           transform: translate(-50%, 150%);
           content: "";
@@ -177,8 +167,8 @@
           width: function.px-to-em(6px);
           height: function.px-to-em(6px);
           background: 
-            linear-gradient(to right, #3E29E3,#3E29E3) top left / 6px 2px no-repeat,
-            linear-gradient(to bottom, #3E29E3,#3E29E3) top right / 2px 6px no-repeat;
+            linear-gradient(to right, variable.$blue-color,variable.$blue-color) top left / 6px 2px no-repeat,
+            linear-gradient(to bottom, variable.$blue-color,variable.$blue-color) top right / 2px 6px no-repeat;
           top: 33%;
           left: 55%;
           content: "";
@@ -187,7 +177,7 @@
 
       a {
         text-decoration: none;
-        color: #3E29E3;
+        color: variable.$blue-color;
       }
     }
   }
@@ -218,7 +208,7 @@
 
         &::after,
         &::before {
-          background-color: #1B1B1B;
+          background-color: variable.$dark-color;
         }
       }
     }

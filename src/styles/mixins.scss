@@ -1,4 +1,5 @@
 @use "./variables.scss" as variable;
+@use "./functions.scss" as function;
 
 @mixin text-style($font-size, $line-height, $font-family) {
   font-size: $font-size;
@@ -31,4 +32,34 @@
 
     content: $content;
   }
+}
+
+@mixin background-image($path, $size: cover) {
+  background-image: url(#{$path});
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin checkbox-after-element {
+  position: absolute;
+  top: -0.2em;
+  left: -1.9em;
+  width: 0.4em;
+  height: 0.7em;
+  border: solid variable.$biege-color;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  content: "";
+}
+
+@mixin radio-after-element {
+  position: absolute;
+  width: function.px-to-em(15px);
+  height:  function.px-to-em(15px);
+  background-color: variable.$blue-color;
+  top: -0.1em;
+  left: -2.1em;
+  border-radius: 1em;
+  content: "";
 }

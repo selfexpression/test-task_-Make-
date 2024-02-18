@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as variable;
+
 .accordion {
   margin-bottom: 5em;
 
@@ -14,7 +16,7 @@
       border: none;
       background: none;
       color: #7D7D7D;
-      border-bottom: 1px solid #CBCBCC;
+      border-bottom: 1px solid variable.$grey-color;
 
       &::after,
       &::before {
@@ -23,7 +25,7 @@
         height: 0.5em;
         top: 2.5em;
 
-        background-color: #3E29E3;
+        background-color: variable.$blue-color;
         transition: all 0.3s ease-in-out;
 
         content: " ";
@@ -51,12 +53,12 @@
     .accordion__button {
       &:hover {
         color: #1B1B1B;
-        border-bottom: 1px solid #3E29E3;
+        border-bottom: 1px solid variable.$blue-color;
       }
   
       &--active {
         color: #3E29E3;
-        border-bottom: 2px solid #3E29E3;
+        border-bottom: 2px solid variable.$blue-color;
 
         &::after {
           transform: rotate(-45deg);
@@ -77,7 +79,7 @@
   }
   
   .accordion__item[data-item="item-2"] {
-    border-bottom: 1px solid #3E29E3;
+    border-bottom: 1px solid variable.$blue-color;
 
     .accordion__button {
       color: #1B1B1B;
@@ -85,10 +87,10 @@
   }
 
   .accordion__item[data-item="item-3"] {
-    border-bottom: 2px solid #3E29E3;
+    border-bottom: 2px solid variable.$blue-color;
 
     .accordion__button {
-      color: #3E29E3;
+      color: variable.$blue-color;
       border: none;
 
       &::after {
