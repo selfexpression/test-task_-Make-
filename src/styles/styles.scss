@@ -46,7 +46,7 @@
   .#{$name} {
     @include mixin.text-style($size, $line-height, $font-family);
     @if $name == util-text {
-      color: variable.$dark-grey-color;;
+      color: variable.$dark-grey-color;
     }
   }
 }
@@ -157,7 +157,7 @@ td, th {
     ('h2', variable.$h2-mobile-font-size, variable.$h2-mobile-line-height),
     ('h3', variable.$h3-mobile-font-size, variable.$h3-mobile-line-height)
   ) {
-    #{$tag} .#{tag}-style {
+    #{$tag}, .#{$tag}-style {
       font-size: $size;
       line-height: $line-height;
     }

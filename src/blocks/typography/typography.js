@@ -1,25 +1,15 @@
-export const toggleTypography = () => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const desktop = document.querySelector('.typography__desktop');
-    const mobile = document.querySelector('.typography__mobile');
-    const desktopButton = document.querySelector('.desktop-button');
-    const mobileButton = document.querySelector('.mobile-button');
+export const renderTypographyTable = (elements, state) => {
+  const { isDesktopView, isMobileView } = state.typography;
 
-    const toggleDesktopHandler = () => {
-      desktopButton.classList.add('desktop-button--active');
-      mobileButton.classList.remove('desktop-button--active');
-      desktop.style.display = 'block';
-      mobile.style.display = 'none';
-    };
+  elements.typography.desktopButton
+    .classList.toggle('desktop-button--active', isDesktopView);
 
-    const toggleMobileHandler = () => {
-      mobileButton.classList.add('desktop-button--active');
-      desktopButton.classList.remove('desktop-button--active');
-      desktop.style.display = 'none';
-      mobile.style.display = 'block';
-    };
+  elements.typography.mobileButton
+    .classList.toggle('desktop-button--active', isMobileView);
 
-    desktopButton.addEventListener('click', toggleDesktopHandler);
-    mobileButton.addEventListener('click', toggleMobileHandler);
-  });
+  elements.typography.desktopElement
+    .style.display = isDesktopView ? 'block' : 'none';
+
+  elements.typography.mobileElement
+    .style.display = isMobileView ? 'block' : 'none';
 };
