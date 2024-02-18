@@ -2,16 +2,21 @@
   .typography__menu {
     border-bottom: 1px solid #CBCBCC;
 
-    button {
-      margin-bottom: 1em;
+    .desktop-button, .mobile-button {
+      padding-bottom: 1em;
       margin-top: 2.5em;
+      margin-right: 2em;
       border: none;
       background-color: white;
       cursor: pointer;
+
+      &--active {
+        border-bottom: 2px solid #3E29E3;
+      }
     }
   }
 
-  .typography__desktop {
+  .typography__desktop, .typography__mobile {
     border-collapse: separate;
 
     table {
@@ -26,6 +31,10 @@
         color: #1B1B1B;
       }
     }
+  }
+
+  .typography__desktop {
+    display: block;
   }
 
   .typography__mobile {

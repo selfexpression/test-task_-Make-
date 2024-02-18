@@ -29,6 +29,10 @@
     .grid__desktop,
     .grid__tablet,
     .grid__mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       img {
         width: 100%;
         height: auto;
@@ -50,10 +54,9 @@
         width: 95%;
         height: function.px-to-em(2px);
         background-color: #3E29E3;
-        top: 40vh;
         left: 50%;
         transform: translateX(-50%);
-
+  
         content: "";
       }
 
