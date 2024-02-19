@@ -58,7 +58,7 @@ const selectListController = (initialState, toggleState, elements) => {
   optionElements
     .forEach((element) => {
       element.addEventListener('click', () => {
-        renderSelectedElement(element.textContent, selectListLabel);
+        renderSelectedElement(element, selectListLabel, elements);
         appState = handleToggleList(appState);
       });
     });
