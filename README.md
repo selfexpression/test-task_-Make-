@@ -2,7 +2,6 @@
 
 ### Installation Guide:
 
-* ```$ git clone: https://github.com/selfexpression/test-task_-Make-```
-* ```$ make install```
-* ```$ make build```
-* ```$ make start```
+- `$ git clone: https://github.com/selfexpression/test-task_-Make-`
+- `$ npm i`
+- `$ npm start`
